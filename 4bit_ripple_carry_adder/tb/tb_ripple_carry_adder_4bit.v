@@ -10,8 +10,11 @@ module tb_rca_4bit;
     rca_4bit dut(.a(A), .b(B), .sum(SUM), .cout(COUT));
 
     initial begin
+        $dumpfile("wave.vcd");
+        $dumpvars(0, tb_rca_4bit);
+
         $monitor("Time=%0t A=%b B=%b | SUM = %b COUT = %b", $time, A, B, SUM, COUT);
-        
+
         A = 4'b0000; B = 4'b0000; #10;
         A = 4'b0001; B = 4'b0010; #10;
         A = 4'b0101; B = 4'b0011; #10;
