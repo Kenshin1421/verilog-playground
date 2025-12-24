@@ -21,12 +21,12 @@ module tb_Pattern;
         reset = 0;
 
         $monitor("Time = %0t  a = %b | b = %b", $time, a, b);
-        a = 0; #15;
-        a = 1; #15;
-        a = 0; #15;
-        a = 1; #15;
+        a = 0; #24;
+        a = 1; #24;
+        a = 0; #24;
+        a = 1; #24;
 
-        #15 $finish;
+        #24 $finish;
     end
 
 endmodule

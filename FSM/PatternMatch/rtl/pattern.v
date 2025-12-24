@@ -2,8 +2,10 @@
 //Implemented with Mealy FSM
 
 module pattern_matcher(input a, output b, input CLK, input reset);
-    reg state = 1'b0;
-    wire S0_n = ~a;
+    reg state;
+    wire S0_n;
+    
+    assign S0_n = ~a;
 
     always @(posedge CLK) begin
         if (reset) begin
@@ -14,5 +16,5 @@ module pattern_matcher(input a, output b, input CLK, input reset);
         end
     end
 
-    b = state&a;
+    assign b = state&a;
 endmodule
